@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.space_48 {
+	height: 48px;
+}
+/* header setting */
+.header_container {
+	height: 500px;
+	color: white;
+	position: relative;
+	top: 0;
+	left: 0;
+	background: rgb(59, 51, 51);
+	border-top: 5px solid black;
+	border-bottom: 5px solid black;
+}
+
+.header_container h1 {
+	position: relative;
+	margin: 0;
+	font-size: 48px;
+	z-index: 10;
+	color: rgb(211, 230, 45);
+	text-shadow: #FC0 1px 0 10px;
+}
+
+.header_container p {
+	font-size: 36px;
+	z-index: 10;
+	color: rgb(211, 230, 45);
+	text-shadow: #FC0 1px 0 10px;
+}
+/* ホーム写真のアニメーション */
+.header_container ul {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.header_container ul li {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.header_container ul li:nth-child(1) {
+	opacity: 0;
+	animation: album 15s linear 0s infinite;
+}
+.header_container ul li:nth-child(2) {
+	opacity: 0;
+	animation: album 15s linear 5s infinite;
+}
+.header_container ul li:nth-child(3) {
+	opacity: 0;
+	animation: album 15s linear 10s infinite;
+}
+
+@keyframes album {
+	0%{
+ 		opacity: 0;
+	}
+	5%{
+		opacity: 0.5;
+	}
+	10%{
+		opacity: 0.8;
+	}
+	15%{
+		opacity: 1;
+	}
+	20%{
+		opacity: 1;
+	}
+	25%{
+		opacity: 0.8;
+	}
+	30%{
+ 		opacity: 0.5;
+	}
+	38%{
+		opacity: 0;
+	}
+	100%{
+ 		opacity: 0;
+	}
+}
+
+  </style>
+</head>
+<body>
+          <!-- トップ画像周り -->
+          <header id="top" class="header_container center">
+            <h1>セカイを変えるチーズを作ろう</h1>
+            <div class="space_40"></div>
+            <p>チーズ職人養成学校「チーズアカデミーFUKUOKA」</p>
+    
+                    <ul class="album">
+                        <li><img src="./img/Cheese1.jpeg" width="100%"></li>
+                        <li><img src="./img/Cheese2.jpeg" width="100%"></li>
+                        <li><img src="./img/Cheese3.jpeg" width="100%"></li>
+                    </ul>
+    
+    </header>
+</body>
+</html>

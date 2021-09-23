@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <style>
+    body {
+      background: black;
+    }
+    .input_styles {
+      background: gray;
+      width: 400px;
+      margin: auto;
+      position: relative;
+      border-radius: 5px;
+    }
+
+    input {
+      height: 40px;
+      width: 400px;
+      line-height: 0.2em;
+      font-size: 1em;
+      padding: 10px 0 0 5px;
+      border: 1px solid #eff3bd;
+      border-radius: 5px;
+      background: black;
+      color: white;
+    }
+
+    .placeholder {
+      position: absolute;
+      top: 13px;
+      left: 110px;
+      font-size: 18px;
+      pointer-events: none;
+      color: white;
+      
+    }
+    .placeholder_animation {
+      animation: action 0.2s linear forwards;
+    }
+
+    @keyframes action {
+      0% {
+        top: 15px;
+        left: 80px;
+        font-size: 16px;
+      }
+      100% {
+        top: 5px;
+        left: 10px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+</head>
+
+<body>
+
+  <div class="input_styles">
+    <input type="text" onfocus="action()" onblur="outaction()">
+    <div id="anime" class="placeholder">名前を入力してください</div>
+  </div>
+<script>
+  const placeholder = document.getElementById('anime');
+const input = document.querySelector('input');
+
+function action() {
+    placeholder.classList.add('placeholder_animation');
+}
+function outaction() {
+  placeholder.classList.remove('placeholder_animation');
+}
+</script>
+
+
+</body>
+</html>

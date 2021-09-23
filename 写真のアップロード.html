@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+.container {
+  width: 400px;
+  height: 200px;
+  border: 2px solid blue;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+p {
+  margin: 0;
+}
+button {
+  width: 140px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 6rem;
+}
+button:hover {
+  opacity: 0.5;
+}
+img {
+  width: 90%;
+	/* height: 100%; */
+	object-fit: contain;
+  margin: auto;
+}
+.prepre{
+  width: 300px;
+  height:500px;
+  border: 2px solid red;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+</style>
+<body>
+
+  <div class="container">
+    <div id="img_box" class="img-box">
+      <p>Tresure</p>
+      <input hidden id="open" type="file" name="profilepic" />
+      <button onclick="fileUpload()">Choose File</button>
+    </div>
+    <img hidden id="go" src="" style="height: 90%;">
+  </div>
+  <p>
+    Preview:<br>
+    <div class="prepre">
+      <img id="preview">
+    </div>
+    </p>
+  <script>
+    const open = document.getElementById('open');
+    const preview = document.getElementById('preview');
+    const img_box = document.getElementById('img_box');
+    const go = document.getElementById('go');
+    function fileUpload() {
+      open.click();
+    }
+    open.addEventListener('change',function(e) {
+      const file = e.target.files[0];
+      console.log(e.target.files[0]);
+      const reader = new FileReader();
+
+      // 画像でない場合の処理はしない
+      if(file.type.indexOf('image') < 0) {
+        return false;
+      }
+      // 要素のhidden
+      img_box.style.display = "none";
+      
+
+      // アップロードした画像を設定
+      reader.onload = (function(file) {
+        return function(e) {
+          preview.src = e.target.result;
+          go.src = e.target.result;
+          go.hidden = false;
+          // console.log(e.target.result);
+          // preview.title = e.file.name; 
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    });
+
+      // const file = e.target.files[0];
+    
+  </script>
+</body>
+</html>
+
