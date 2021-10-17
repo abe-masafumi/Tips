@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form-id01">
+			<!-- このやり方は画面遷移する↓↓↓↓ -->
+			<!-- <button id="id01" onclick="getId(this);">show ID</button> -->
+      <input type="button" class="id01" value="show ID go" onclick="getIdgo(this);" />
+      <input type="button" class="id01" value="show ID back" onclick="getIdback(this);" />
+    </form>
+    <script>
+			
+			function getIdgo(ele) {
+				var id_value = ele.className; // eleのプロパティとしてidを取得
+        const formid = `form-${id_value}`
+        alert(formid)
+				const form = document.getElementById(formid);
+				form.method = "post";
+				form.target = "_blank";
+        form.action = "./";
+				form.submit();
+      }
+
+			function getIdback(ele) {
+				var id_value = ele.className; // eleのプロパティとしてidを取得
+        const formid = `form-${id_value}`
+        alert(formid)
+				const form = document.getElementById(formid);
+				form.method = "post";
+				form.action = "./写真のアップロード.html";
+				form.submit();
+      }
+    </script>
+  </body>
+</html>
