@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="test"></div>
+  <pre id="test"></pre>
   <script>
     const json = {
       "glossary": {
@@ -33,7 +33,7 @@
     };
     console.log(json);
     const div = document.getElementById('test');
-    div.innerHTML = JSON.stringify(json, null, 2);;
+    div.innerHTML = JSON.stringify(json);;
   </script>
 </body>
 </html>
