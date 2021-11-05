@@ -7,9 +7,9 @@
   <title>Document</title>
 </head>
 <body>
-  
-  <pre>
-    {
+  <div id="test"></div>
+  <script>
+    const json = {
       "glossary": {
           "title": "example glossary",
       "GlossDiv": {
@@ -31,6 +31,9 @@
           }
       }
     };
-  </pre>
+    console.log(json);
+    const div = document.getElementById('test');
+    div.innerHTML = JSON.stringify(json, null, 2);;
+  </script>
 </body>
 </html>
