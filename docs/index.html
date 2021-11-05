@@ -7,33 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <pre id="test"></pre>
+  <div id="test"></div>
   <script>
-    const json = {
-      "glossary": {
-          "title": "example glossary",
-      "GlossDiv": {
-              "title": "S",
-        "GlossList": {
-                  "GlossEntry": {
-                      "ID": "SGML",
-            "SortAs": "SGML",
-            "GlossTerm": "Standard Generalized Markup Language",
-            "Acronym": "SGML",
-            "Abbrev": "ISO 8879:1986",
-            "GlossDef": {
-                          "para": "A meta-markup language, used to create markup languages such as DocBook.",
-              "GlossSeeAlso": ["GML", "XML"]
-                      },
-            "GlossSee": "markup"
-                  }
-              }
-          }
-      }
-    };
+  const json = '{"result":true, "count":42}';
     console.log(json);
     const div = document.getElementById('test');
-    div.innerHTML = JSON.stringify(json);;
+    div.innerHTML = JSON.parse(json);;
   </script>
 </body>
 </html>
