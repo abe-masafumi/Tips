@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="./catch.php"
+      id="form"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input
+        id="file"
+        type="file"
+        name="upfile"
+        accept="image/*"
+        capture="camera"
+        onchange="submit()"
+      />
+    </form>
+    <img id="preview" alt="" style="max-width:200px;" >
+    <script>
+      // window.addEventListener("load", (event) => {
+      // alert("ページが完全に読み込まれました");
+      // });
+      const file = document.getElementById("file");
+      const form = document.getElementById("form");
+      function submit() {
+        form.submit();
+      }
+      // function previewImage(obj) {
+      //   console.log(obj);
+      //   var data = form.serializeArray();
+        // console.log(data);
+        // var fileReader = new FileReader();
+        // fileReader.onload = function () {
+        //   document.getElementById("preview").src = fileReader.result;
+        //   console.log(fileReader.result);
+        // }
+        // fileReader.readAsDataURL(obj.files[0]);
+      // }
+    </script>
+  </body>
+</html>

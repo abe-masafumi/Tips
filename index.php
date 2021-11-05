@@ -1,6 +1,3 @@
-<?php
-include('./config/link.php');
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,10 +13,15 @@ include('./config/link.php');
 <body>
   <div class="loading"></div>
 </body>
+<p><a href="./inputタグの入力値.html">inputタグの入力値</a></p>
+<p><a href="./Twitter風inputタグ.html">Twitter風inputタグ</a></p>
+<p><a href="./クリックした要素のid.html">クリックした要素のid</a></p>
+<p><a href="./タイトル写真スライド.html">タイトル写真スライド</a></p>
+<p><a href="./ホバーでグラデーション.html">ホバーでグラデーション</a></p>
+<p><a href="./写真のアップロード.html">写真のアップロード</a></p>
+<p><a href="./写真のアップロード/アップロード.html">アップロード</a></p>
 <script>
-setTimeout(function(){
-  window.location.href = "<?=$main?>"; 
-}, 4000);
+
 
 </script>
 </html>
